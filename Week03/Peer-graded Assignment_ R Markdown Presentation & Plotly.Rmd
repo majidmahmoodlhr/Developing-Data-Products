@@ -1,0 +1,28 @@
+---
+title: 'Peer-graded Assignment: R Markdown Presentation & Plotly'
+autor: Majid Mahmood
+date: "12-May-2023"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+```{r}
+library(plotly)
+```
+## Does the web page feature a date and is this date less than two months before the date that you're grading this assignment?
+
+## Is the web page a presentation and does it feature an interactive plot that appears to have been created with Plotly?
+
+```{r}
+# Generate fictional data
+set.seed(123)
+hours_studied <- rnorm(50, 10, 3)
+final_grade <- hours_studied + rnorm(50, 0, 2)
+
+# Create the Plotly plot
+plot_ly(x = hours_studied, y = final_grade, type = "scatter", mode = "markers") %>%
+  layout(title = "Hours Studied vs. Final Grade",
+         xaxis = list(title = "Hours Studied"),
+         yaxis = list(title = "Final Grade"))
+```
+
